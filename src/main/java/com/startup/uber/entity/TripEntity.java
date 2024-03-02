@@ -20,7 +20,16 @@ public class TripEntity extends BaseEntity {
     @Column(name = "ID", unique = true, nullable = false)
     private Long id;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "CUSTOMER_ID")
+    private CustomerEntity customer;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "DRIVER_ID")
+    private CustomerEntity driver;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "PAYMENT_ID", referencedColumnName = "ID")
     private PaymentEntity paymentEntity;
+
 }

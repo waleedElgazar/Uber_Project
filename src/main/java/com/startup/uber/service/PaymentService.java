@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PaymentService {
-@Autowired
-    BaseMapper baseMapper;
+//@Autowired
+//    BaseMapper baseMapper;
     public void test() {
 
     }
