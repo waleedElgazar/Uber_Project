@@ -12,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PaymentDto extends BaseDto{
     private Long id;
-    private PaymentMethodEnum paymentMethodEnum;
+    private PaymentMethodEnum paymentMethod;
     private double amount;
     private TripDto trip;
 }

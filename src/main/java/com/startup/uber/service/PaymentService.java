@@ -7,11 +7,7 @@ import com.startup.uber.mapper.BaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
-public class PaymentService {
-//@Autowired
-//    BaseMapper baseMapper;
-    public void test() {
+public interface PaymentService {
 
-    }
+    public PaymentDto add(PaymentDto paymentDto);
 }

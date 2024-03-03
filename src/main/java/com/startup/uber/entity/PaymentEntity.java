@@ -26,7 +26,7 @@ public class PaymentEntity extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
     @Column(name = "PAYMENT_METHOD")
-    private PaymentMethodEnum paymentMethodEnum;
+    private PaymentMethodEnum paymentMethod;
 
     @Column(name = "AMOUNT")
     private double amount;
@@ -37,7 +37,7 @@ public class PaymentEntity extends BaseEntity{
         return "PaymentEntity{" +
                 "id=" + id +
                 ", trip=" + trip +
-                ", paymentMethodEnum=" + paymentMethodEnum +
+                ", paymentMethodEnum=" + paymentMethod +
                 ", amount=" + amount +
                 '}';
     }

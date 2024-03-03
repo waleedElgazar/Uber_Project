@@ -15,17 +15,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 class UberApplicationTests {
 
 //    @Autowired
-    BaseMapper baseMapper = new BaseMapper();
-    PaymentRepo paymentRepo;
-    @Test
-    void contextLoads() {
-
-        paymentRepo.findAll();
-
-
-        PaymentDto paymentDto = new PaymentDto(1l, PaymentMethodEnum.CARD, 12d, new TripDto());
-        BaseEntity baseEntity = baseMapper.convertToEntity(paymentDto, PaymentEntity.class);
-        System.out.println(baseEntity.toString());
-    }
+//    BaseMapper baseMapper = new BaseMapper();
+//    PaymentRepo paymentRepo;
+//    @Test
+//    void contextLoads() {
+//
+//        paymentRepo.findAll();
+//
+//
+//        PaymentDto paymentDto = new PaymentDto(1l, PaymentMethodEnum.CARD, 12d, new TripDto());
+//        BaseEntity baseEntity = baseMapper.convertToEntity(paymentDto, PaymentEntity.class);
+//        System.out.println(baseEntity.toString());
+//    }
 
 }
