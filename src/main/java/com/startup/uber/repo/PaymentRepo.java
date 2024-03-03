@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PaymentRepo extends JpaRepository<PaymentEntity, Long>, JpaSpecificationExecutor<PaymentEntity> {
+public interface PaymentRepo extends BaseRepo<PaymentEntity> {
 }

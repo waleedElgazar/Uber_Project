@@ -1,6 +1,6 @@
 package com.startup.uber.entity;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,9 +10,8 @@ import java.util.Date;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class BaseEntity {
+@MappedSuperclass
+public abstract class BaseEntity {
 
     @Column(name = "CREATED_DATE")
     private Date createdDate;
