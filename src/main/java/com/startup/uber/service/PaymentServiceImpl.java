@@ -21,7 +21,7 @@ public class PaymentServiceImpl implements PaymentService{
 
     @Override
     public PaymentDto add(PaymentDto paymentDto) {
-        PaymentEntity paymentEntity = getPaymentMapper().convertToEntity(paymentDto, PaymentEntity.class);
+        PaymentEntity paymentEntity = getPaymentMapper().convertToEntity(paymentDto);
         getPaymentRepo().save(paymentEntity);
         return paymentDto;
     }

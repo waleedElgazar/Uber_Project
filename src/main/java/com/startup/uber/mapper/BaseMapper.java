@@ -14,41 +14,44 @@ import java.util.List;
 
 @Getter
 @Setter
-@Component
-public class BaseMapper<E extends BaseEntity, D extends BaseDto> {
+//@Component
+public abstract class BaseMapper<E extends BaseEntity, D extends BaseDto> {
 
     @Autowired
     private ModelMapper modelMapper;
 
-    public E convertToEntity(D dto, Class<? extends BaseEntity> entity) {
+    public E convertToEntity(D dto) {
         if (null == dto) {
             return null;
         }
-        return (E) this.getModelMapper().map(dto, entity);
+        return this.getModelMapper().map(dto, this.getEntityClass());
     }
 
-    public D convertToDto(E entity, Class<? extends BaseDto> dto) {
+    public D convertToDto(E entity) {
         if (null == entity) {
             return null;
         }
-        return (D) this.getModelMapper().map(entity, dto);
+        return this.getModelMapper().map(entity, this.getDtoClass());
     }
 
-    public List<D> convertListEntityToDto(List<E> entityList, D dto) {
+    public List<D> convertListEntityToDto(List<E> entityList) {
         List<D> dtoList = new ArrayList<>();
         for (E entity : entityList) {
-            dtoList.add(convertToDto(entity, dto.getClass()));
+            dtoList.add(convertToDto(entity));
         }
         return dtoList;
     }
 
-    public List<E> convertListDtoToEntity(List<D> dtoList, E entity) {
+    public List<E> convertListDtoToEntity(List<D> dtoList) {
         List<E> entityList = new ArrayList<>();
         for (D dto : dtoList) {
-            entityList.add(convertToEntity(dto, entity.getClass()));
+            entityList.add(convertToEntity(dto));
         }
         return entityList;
     }
 
 
+    public abstract Class<D> getDtoClass();
+
+    public abstract Class<E> getEntityClass();
 }
