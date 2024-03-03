@@ -17,7 +17,7 @@ public abstract class BaseService<E extends BaseEntity, D extends BaseDto> {
 
     public void delete(D dtoObject) {
         E baseEntity = (E) getMapper().convertToEntity(dtoObject);
-        getRepo().delete(baseEntity);`
+        getRepo().delete(baseEntity);
     }
 
     public abstract BaseRepo getRepo();
