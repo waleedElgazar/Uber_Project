@@ -20,6 +20,8 @@ public abstract class BaseService<E extends BaseEntity, D extends BaseDto> {
         getRepo().delete(baseEntity);
     }
 
+
+
     public abstract BaseRepo getRepo();
 
     public abstract BaseMapper getMapper();
