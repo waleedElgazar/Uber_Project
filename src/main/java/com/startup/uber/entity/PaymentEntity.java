@@ -21,7 +21,7 @@ public class PaymentEntity extends BaseEntity{
     @Column(name = "ID", unique = true, nullable = false)
     private Long id;
 
-    @OneToOne(mappedBy = "paymentEntity")
+    @OneToOne(mappedBy = "payment")
     private TripEntity trip;
 
     @Enumerated(EnumType.STRING)

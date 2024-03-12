@@ -1,10 +1,13 @@
 package com.startup.uber.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.util.Date;
 
@@ -13,7 +16,20 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class BaseEntity {
 
-    @Column(name = "CREATED_DATE")
+    @CreatedDate
+    @Column(updatable = false)
     private Date createdDate;
+
+    @CreatedBy
+    @Column(updatable = false)
+    private String createdBy;
+
+    @LastModifiedBy
+    @Column(insertable = false)
+    private String lastModifiedBy;
+
+    @LastModifiedDate
+    @Column(insertable = false)
+    private Date lastModifiedDate;
 
 }

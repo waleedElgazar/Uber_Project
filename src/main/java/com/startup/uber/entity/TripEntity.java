@@ -30,6 +30,6 @@ public class TripEntity extends BaseEntity {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "PAYMENT_ID", referencedColumnName = "ID")
-    private PaymentEntity paymentEntity;
+    private PaymentEntity payment;
 
 }
